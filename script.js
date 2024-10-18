@@ -1,6 +1,9 @@
 // Handle Search Form submission
 const searchButton = document.querySelector('button.bg-blue-500');
 
+// Add a smooth transition to the button
+searchButton.style.transition = "all 0.3s ease";
+
 searchButton.addEventListener('click', function() {
   const locationInput = document.querySelector('input[placeholder="New Delhi"]');
   const budgetInput = document.querySelector('input[placeholder="Flat | Budget"]');
@@ -26,7 +29,8 @@ searchButton.addEventListener('click', function() {
     return;
   }
 
-  // Show loading indicator
+  // Add smooth animation for button and input interaction
+  searchButton.style.transform = "scale(0.95)";
   searchButton.textContent = 'Searching...';
   searchButton.disabled = true;
 
@@ -34,8 +38,9 @@ searchButton.addEventListener('click', function() {
   setTimeout(function() {
     alert(`Searching for properties in ${location} within a budget of ${budget}`);
     
-    // Reset button state after search
+    // Reset button state after search with smoothness
     searchButton.textContent = 'Search';
+    searchButton.style.transform = "scale(1)";
     searchButton.disabled = false;
     
     // Add actual search logic here (e.g., making an API call)

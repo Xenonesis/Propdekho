@@ -14,7 +14,7 @@ This project allows users to:
 - Download the mobile app for a seamless property browsing experience.
 
 ### Live Site
-You can access the live version of the project at: [www.google.com](https://www.google.com)
+You can access the live version of the project at: [www.google.com](https://rad-marshmallow-4eed14.netlify.app/)
 
 ### Repository
 The project repository is available on GitHub: [PropDekho Repository](https://github.com/Xenonesis/Propdekho)

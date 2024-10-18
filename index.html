@@ -7,6 +7,24 @@
     <script src="script.js" defer></script>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Additional CSS for Smooth Transitions -->
+    <style>
+        input, button {
+            transition: all 0.3s ease;
+        }
+        input:focus {
+            outline: none;
+            box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+        }
+        button:hover {
+            transform: scale(1.05);
+        }
+        button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+    </style>
 </head>
 <body class="bg-gray-100 font-sans">
 
@@ -27,7 +45,7 @@
             <div class="flex items-center space-x-4">
                 <a href="#" class="hover:underline">New Delhi</a>
                 <a href="#" class="hover:underline">Login</a>
-                <button class="bg-white text-blue-600 px-4 py-2 rounded-full font-semibold">Post Property</button>
+                <button class="bg-white text-blue-600 px-4 py-2 rounded-full font-semibold hover:shadow-lg">Post Property</button>
             </div>
         </div>
     </header>
@@ -46,7 +64,7 @@
             <div class="mt-8 flex justify-center space-x-4">
                 <input type="text" placeholder="New Delhi" class="p-3 border rounded-full w-48">
                 <input type="text" placeholder="Flat | Budget" class="p-3 border rounded-full w-48">
-                <button class="bg-blue-500 text-white px-8 py-3 rounded-full">Search</button>
+                <button class="bg-blue-500 text-white px-8 py-3 rounded-full hover:bg-blue-600 hover:shadow-lg transition-all">Search</button>
             </div>
         </div>
     </section>
@@ -239,7 +257,7 @@
             </div>
         </div>
         <div class="container mx-auto mt-8 text-center text-sm text-gray-500">
-            © 2024 99acres. All rights reserved.
+            © 2024 PropDekho. All rights reserved.
         </div>
     </footer>
 
