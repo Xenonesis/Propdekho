@@ -149,6 +149,77 @@
                 margin-bottom: 10px;
             }
         }
+        .propworth-section {
+            background-color: #003b4d;
+            border-radius: 15px;
+            padding: 20px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1600px;
+            margin: 20px auto;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .propworth-info {
+            max-width: 60%;
+        }
+
+        .propworth-info h2 {
+            margin: 0;
+            font-size: 24px;
+            color: #e30045;
+        }
+
+        .propworth-info p {
+            font-size: 14px;
+            margin: 10px 0;
+        }
+
+        .propworth-input {
+            display: flex;
+            align-items: center;
+            background-color: #004e62;
+            padding: 5px;
+            border-radius: 30px;
+        }
+
+        .propworth-input input {
+            border: none;
+            padding: 10px;
+            border-radius: 30px 0 0 30px;
+            outline: none;
+            color: white;
+            background-color: #004e62;
+            width: 250px;
+        }
+
+        .propworth-input input::placeholder {
+            color: #cce4ed;
+        }
+
+        .propworth-input button {
+            background-color: #e30045;
+            color: white;
+            border: none;
+            border-radius: 0 30px 30px 0;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .propworth-input button:hover {
+            background-color: #ff476b;
+        }
+
+        .estimate-time {
+            font-size: 12px;
+            color: #cce4ed;
+            margin-top: 5px;
+            text-align: right;
+        }
+
     </style>
 </head>
 
@@ -223,26 +294,25 @@
         </div>
     </section>
 
-    <!-- PropWorth Section -->
-    <section class="bg-[#072c3f] py-10">
-        <div class="container mx-auto bg-[#072c3f] rounded-xl py-8 px-10 flex justify-between items-center shadow-lg"
-            style="background: linear-gradient(90deg, rgba(7,44,63,1) 0%, rgba(1,29,38,1) 100%);">
-            <div class="text-left">
-                <h3 class="text-xl text-[#e0f7ff] font-semibold">PropWorth</h3>
-                <p class="text-[#bed0d9] text-sm mt-2">Check Estimated Transaction Price of any Property</p>
-                <ul class="text-[#89c0e4] text-sm mt-4 space-y-1">
-                    <li>99% accuracy backed by AI-powered precision</li>
-                    <li>Insight from Corex - Refreshed annually</li>
-                </ul>
-            </div>
-            <div class="flex items-center space-x-3">
-                <input type="text" class="px-4 py-3 w-80 rounded-l-full bg-[#004f63] text-[#d3dce0] placeholder-[#d3dce0]"
-                    placeholder="Enter Project/Locality">
-                <button
-                    class="bg-[#d34242] text-white px-6 py-3 rounded-r-full hover:bg-[#c13232] transition">Get Estimate</button>
-            </div>
-        </div>
-    </section>
+    <div class="propworth-section">
+      <div class="propworth-info">
+          <h2>PropWorth</h2>
+          <p>Check Estimated Transaction Price of any Property</p>
+          <ul>
+              <li>98% accuracy backed by AI-powered precision</li>
+              <li>Insights from 1 Crore+ listings posted annually</li>
+          </ul>
+      </div>
+      <div>
+          <div class="propworth-input">
+              <input type="text" placeholder="Enter Project/Locality">
+              <button>Get Estimate</button>
+          </div>
+          <div class="estimate-time">Most accurate estimate in just 30 seconds</div>
+      </div>
+  </div>
+
+
 
     <!-- Trending in New Delhi -->
     <section class="py-16 bg-white">
