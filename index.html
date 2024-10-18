@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PropDekho Website</title>
+    <script src="script.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 font-sans">
+
+    <!-- Header -->
+    <header class="bg-blue-600 p-4 text-white shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-6">
+                <img src="logo.png" alt="PropDekho Logo" class="h-12">
+                <nav class="hidden md:flex space-x-6 text-sm font-medium">
+                    <a href="#" class="hover:underline">Buy</a>
+                    <a href="#" class="hover:underline">Rent</a>
+                    <a href="#" class="hover:underline">PG</a>
+                    <a href="#" class="hover:underline">Commercial</a>
+                    <a href="#" class="hover:underline">Interior</a>
+                    <a href="#" class="hover:underline">Help</a>
+                </nav>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="#" class="hover:underline">New Delhi</a>
+                <a href="#" class="hover:underline">Login</a>
+                <button class="bg-white text-blue-600 px-4 py-2 rounded-full font-semibold">Post Property</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-gray-100 py-16 text-center">
+        <img src="building.jpg" alt="Hero Background" class="absolute inset-0 w-full h-full object-cover opacity-20">
+        <div class="relative container mx-auto">
+            <h1 class="text-5xl font-bold text-gray-800">Find a home you'll love</h1>
+            <div class="mt-8 flex justify-center space-x-4">
+                <button class="bg-white border border-blue-500 text-blue-500 px-6 py-3 rounded-full">Buy</button>
+                <button class="bg-white border border-blue-500 text-blue-500 px-6 py-3 rounded-full">Rent</button>
+                <button class="bg-white border border-blue-500 text-blue-500 px-6 py-3 rounded-full">PG</button>
+                <button class="bg-white border border-blue-500 text-blue-500 px-6 py-3 rounded-full">Commercial</button>
+            </div>
+            <div class="mt-8 flex justify-center space-x-4">
+                <input type="text" placeholder="New Delhi" class="p-3 border rounded-full w-48">
+                <input type="text" placeholder="Flat | Budget" class="p-3 border rounded-full w-48">
+                <button class="bg-blue-500 text-white px-8 py-3 rounded-full">Search</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Owner Property -->
+    <section class="py-16 bg-gray-100">
+        <h2 class="text-3xl font-semibold text-center text-gray-800">Popular Owner Property</h2>
+        <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 container mx-auto">
+            <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                <img src="sofa.png" alt="Property 1" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <p class="text-gray-700">Property 1 Description</p>
+                </div>
+            </div>
+            <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                <img src="room.jpeg" alt="Property 2" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <p class="text-gray-700">Property 2 Description</p>
+                </div>
+            </div>
+            <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                <img src="coin.png" alt="Property 3" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <p class="text-gray-700">Property 3 Description</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PropWorth Section (Redesigned to match the image) -->
+    <section class="bg-[#0a2a38] py-8">
+        <div class="container mx-auto bg-[#02232d] rounded-xl py-6 px-10 flex justify-between items-center shadow-lg">
+            <div class="text-left">
+                <h3 class="text-lg text-white font-semibold">PropWorth</h3>
+                <p class="text-white text-sm mt-2">Check Estimated Transaction Price of any Property</p>
+                <ul class="text-[#89c0e4] text-sm mt-4 space-y-1">
+                    <li>99% accuracy backed by AI-powered precision</li>
+                    <li>Insight from Corex - Refreshed annually</li>
+                </ul>
+            </div>
+            <div class="flex space-x-2">
+                <input type="text" class="px-4 py-3 w-80 rounded-l-full bg-[#004350] text-[#bed0d9] placeholder-[#bed0d9]" placeholder="Enter Project/Locality">
+                <button class="bg-[#d34242] text-white px-6 py-3 rounded-r-full">Get Estimate</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trending in New Delhi -->
+    <section class="py-16 bg-white">
+        <h2 class="text-3xl font-semibold text-center text-gray-800">Trending in New Delhi</h2>
+        <div class="mt-8 container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="text-center md:text-left">
+                <h3 class="text-xl font-semibold text-gray-800">Sell or Rent your property faster</h3>
+                <p class="mt-4 text-gray-600">Register to post your property for free on PropDekho.</p>
+                <button class="mt-6 bg-blue-500 text-white px-6 py-3 rounded-full">Post Your Property for Free</button>
+            </div>
+            <img src="building.jpg" alt="Promotion" class="w-full h-auto object-cover rounded-lg">
+        </div>
+    </section>
+
+    <!-- Fresh Properties in New Delhi -->
+    <section class="py-16 bg-gray-100">
+        <h2 class="text-3xl font-semibold text-center text-gray-800">Fresh Properties in New Delhi</h2>
+        <div class="mt-12 grid grid-cols-1 md:grid-cols-4 gap-6 container mx-auto">
+            <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                <img src="sofa.png" alt="Property 4" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <p class="text-gray-700">Property 4 Description</p>
+                </div>
+            </div>
+            <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                <img src="coin.png" alt="Property 5" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <p class="text-gray-700">Property 5 Description</p>
+                </div>
+            </div>
+            <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                <img src="building.jpg" alt="Property 6" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <p class="text-gray-700">Property 6 Description</p>
+                </div>
+            </div>
+            <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                <img src="couple.png" alt="Property 7" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <p class="text-gray-700">Property 7 Description</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-semibold text-gray-800">View all testimonials</h2>
+            <div class="mt-4 text-gray-600">Articles and guides for property owners</div>
+            <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Testimonial 1 -->
+                <div class="flex bg-white shadow-lg rounded-lg overflow-hidden">
+                    <img src="testimonial1.jpg" alt="Testimonial Image 1" class="w-1/3 h-32 object-cover">
+                    <div class="p-4">
+                        <p class="text-gray-700 italic">"Great service! Found my perfect home in no time."</p>
+                        <p class="mt-4 text-gray-800 font-semibold">- Rohan, New Delhi</p>
+                    </div>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="flex bg-white shadow-lg rounded-lg overflow-hidden">
+                    <img src="testimonial2.jpg" alt="Testimonial Image 2" class="w-1/3 h-32 object-cover">
+                    <div class="p-4">
+                        <p class="text-gray-700 italic">"PropDekho made selling my property so easy and quick!"</p>
+                        <p class="mt-4 text-gray-800 font-semibold">- Aditi, Gurugram</p>
+                    </div>
+                </div>
+                <!-- Testimonial 3 -->
+                <div class="flex bg-white shadow-lg rounded-lg overflow-hidden">
+                    <img src="testimonial3.jpg" alt="Testimonial Image 3" class="w-1/3 h-32 object-cover">
+                    <div class="p-4">
+                        <p class="text-gray-700 italic">"Amazing platform with excellent customer support."</p>
+                        <p class="mt-4 text-gray-800 font-semibold">- Suresh, Noida</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download App Section -->
+    <section class="py-16 bg-[#f6f1ef]">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between bg-white shadow-lg rounded-lg p-8">
+            <div class="md:w-1/2 text-left">
+                <h2 class="text-3xl font-semibold text-gray-900">Download 99acres Mobile App</h2>
+                <p class="mt-4 text-gray-600">Get to know about newly posted properties as soon as they are posted.</p>
+                <p class="mt-2 text-gray-600">Manage your properties with ease and get instant alerts about responses.</p>
+                <div class="mt-6 flex space-x-4">
+                    <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Google_Play_Store_badge_EN.svg" alt="Google Play" class="h-12"></a>
+                    <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/App_Store_%28iOS%29_logo.png" alt="App Store" class="h-12"></a>
+                </div>
+            </div>
+            <div class="md:w-1/2 mt-6 md:mt-0 flex justify-center">
+                <img src="app-mockup.png" alt="Mobile App" class="w-64 h-auto">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div>
+                <h3 class="text-xl font-semibold mb-4">99acres</h3>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:underline">Mobile Apps</a></li>
+                    <li><a href="#" class="hover:underline">Our Services</a></li>
+                    <li><a href="#" class="hover:underline">Price Trends</a></li>
+                    <li><a href="#" class="hover:underline">Post Your Property</a></li>
+                    <li><a href="#" class="hover:underline">Real Estate Investments</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-xl font-semibold mb-4">Company</h3>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:underline">About us</a></li>
+                    <li><a href="#" class="hover:underline">Contact us</a></li>
+                    <li><a href="#" class="hover:underline">Careers with us</a></li>
+                    <li><a href="#" class="hover:underline">Terms & Conditions</a></li>
+                    <li><a href="#" class="hover:underline">Request Info</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-xl font-semibold mb-4">Our Partners</h3>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:underline">Naukri.com</a></li>
+                    <li><a href="#" class="hover:underline">Jeevansathi.com</a></li>
+                    <li><a href="#" class="hover:underline">PolicyBazaar.com</a></li>
+                    <li><a href="#" class="hover:underline">Shiksha.com</a></li>
+                    <li><a href="#" class="hover:underline">PaisaBazaar.com</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-xl font-semibold mb-4">Contact Us</h3>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:underline">Toll Free: 1800 41 99099</a></li>
+                    <li><a href="#" class="hover:underline">Email: feedback@99acres.com</a></li>
+                </ul>
+                <div class="mt-6">
+                    <h3 class="text-xl font-semibold mb-4">Download the App</h3>
+                    <div class="flex space-x-4">
+                        <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Google_Play_Store_badge_EN.svg" alt="Google Play" class="h-10"></a>
+                        <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/App_Store_%28iOS%29_logo.png" alt="App Store" class="h-10"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container mx-auto mt-8 text-center text-sm text-gray-500">
+            © 2024 99acres. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
