@@ -30,17 +30,51 @@
             cursor: not-allowed;
         }
 
-        /* Responsive Navbar */
-        @media (max-width: 768px) {
-            .mobile-menu {
-                display: none;
-            }
-
-            .hamburger {
-                display: block;
-            }
+        /* Navbar Styles */
+        .navbar {
+            background-color: #007bff;
+            padding: 10px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
         }
 
+        .navbar .logo {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .navbar .menu {
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar .menu a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .navbar .buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .navbar .buttons a {
+            padding: 5px 10px;
+            background-color: #fff;
+            color: #007bff;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .navbar .buttons a:hover {
+            background-color: #ddd;
+        }
+
+        /* Hamburger Menu */
         .hamburger {
             display: none;
             cursor: pointer;
@@ -53,11 +87,36 @@
             margin: 4px;
         }
 
-        .mobile-menu.active {
-            display: block;
+        /* Mobile Menu */
+        @media (max-width: 768px) {
+            .navbar .menu {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                gap: 0;
+                text-align: center;
+            }
+
+            .navbar .menu.active {
+                display: flex;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .navbar .buttons {
+                display: none;
+            }
+
+            .navbar .logo {
+                width: 100%;
+                text-align: center;
+                margin-bottom: 10px;
+            }
         }
 
-        /* Responsive Styles */
+        /* Responsive Hero Section */
         @media (max-width: 768px) {
             .hero-section h1 {
                 font-size: 2rem;
@@ -81,7 +140,7 @@
             }
         }
 
-        /* Responsive for buttons and input scaling */
+        /* Button and Input Scaling */
         @media (max-width: 768px) {
             input,
             button {
@@ -95,32 +154,27 @@
 
 <body class="bg-gray-100 font-sans">
 
-    <!-- Header -->
-    <header class="bg-blue-600 p-4 text-white shadow-lg">
-        <div class="container mx-auto flex justify-between items-center">
-            <div class="flex items-center space-x-6">
-                <img src="logo.png" alt="PropDekho Logo" class="h-12">
-                <!-- Mobile Menu Button -->
-                <div class="hamburger md:hidden">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
-                <!-- Mobile Menu -->
-                <nav class="mobile-menu md:flex md:space-x-6 text-sm font-medium">
-                    <a href="#" class="hover:underline block md:inline-block">Buy</a>
-                    <a href="#" class="hover:underline block md:inline-block">Rent</a>
-                    <a href="#" class="hover:underline block md:inline-block">PG</a>
-                    <a href="#" class="hover:underline block md:inline-block">Commercial</a>
-                    <a href="#" class="hover:underline block md:inline-block">Interior</a>
-                    <a href="#" class="hover:underline block md:inline-block">Help</a>
-                </nav>
-            </div>
-            <div class="flex items-center space-x-4">
-                <a href="#" class="hover:underline">New Delhi</a>
-                <a href="#" class="hover:underline">Login</a>
-                <button class="bg-white text-blue-600 px-4 py-2 rounded-full font-semibold hover:shadow-lg">Post Property</button>
-            </div>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="logo">PROP DEKHO</div>
+        <div class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="menu">
+            <a href="#">Buy</a>
+            <a href="#">Rent</a>
+            <a href="#">Sell</a>
+            <a href="#">Home Loans</a>
+            <a href="#">Home Interiors</a>
+            <a href="#">MB Advice</a>
+            <a href="#">Help</a>
+        </div>
+        <div class="buttons">
+            <a href="#">MB Prime</a>
+            <a href="#">Login</a>
+            <a href="#" style="background-color: orange;">Post Property</a>
         </div>
     </header>
 
@@ -132,6 +186,7 @@
             <div class="mt-8 flex justify-center space-x-4 flex-wrap">
                 <button class="bg-white border border-blue-500 text-blue-500 px-6 py-3 rounded-full">Buy</button>
                 <button class="bg-white border border-blue-500 text-blue-500 px-6 py-3 rounded-full">Rent</button>
+                <button class="bg-white border border-blue-500 text-blue-500 px-6 py-3 rounded-full">New</button>
                 <button class="bg-white border border-blue-500 text-blue-500 px-6 py-3 rounded-full">PG</button>
                 <button class="bg-white border border-blue-500 text-blue-500 px-6 py-3 rounded-full">Commercial</button>
             </div>
@@ -168,7 +223,7 @@
         </div>
     </section>
 
-    <!-- PropWorth Section (Updated to match the PNG) -->
+    <!-- PropWorth Section -->
     <section class="bg-[#072c3f] py-10">
         <div class="container mx-auto bg-[#072c3f] rounded-xl py-8 px-10 flex justify-between items-center shadow-lg"
             style="background: linear-gradient(90deg, rgba(7,44,63,1) 0%, rgba(1,29,38,1) 100%);">
@@ -341,7 +396,7 @@
     <!-- Add JS for the mobile menu toggle -->
     <script>
         const hamburger = document.querySelector('.hamburger');
-        const mobileMenu = document.querySelector('.mobile-menu');
+        const mobileMenu = document.querySelector('.menu');
 
         hamburger.addEventListener('click', function () {
             mobileMenu.classList.toggle('active');
