@@ -4,474 +4,424 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PropDekho Website</title>
-    <script src="script.js" defer></script>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
-    <!-- Additional CSS for Smooth Transitions and Responsive Design -->
-    <style>
-        input,
-        button {
-            transition: all 0.3s ease;
-        }
-
-        input:focus {
-            outline: none;
-            box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
-        }
-
-        button:hover {
-            transform: scale(1.05);
-        }
-
-        button:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-        }
-
-        /* Navbar Styles */
-        .navbar {
-            background-color: #007bff;
-            padding: 10px;
-            color: white;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .navbar .logo {
-            font-size: 18px;
-            font-weight: bold;
-        }
-
-        .navbar .menu {
-            display: flex;
-            gap: 20px;
-        }
-
-        .navbar .menu a {
-            color: white;
-            text-decoration: none;
-        }
-
-        .navbar .buttons {
-            display: flex;
-            gap: 10px;
-        }
-
-        .navbar .buttons a {
-            padding: 5px 10px;
-            background-color: #fff;
-            color: #007bff;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .navbar .buttons a:hover {
-            background-color: #ddd;
-        }
-
-        /* Hamburger Menu */
-        .hamburger {
-            display: none;
-            cursor: pointer;
-        }
-
-        .hamburger div {
-            width: 25px;
-            height: 3px;
-            background-color: white;
-            margin: 4px;
-        }
-
-        /* Mobile Menu */
-        @media (max-width: 768px) {
-            .navbar .menu {
-                display: none;
-                flex-direction: column;
-                width: 100%;
-                gap: 0;
-                text-align: center;
-            }
-
-            .navbar .menu.active {
-                display: flex;
-            }
-
-            .hamburger {
-                display: block;
-            }
-
-            .navbar .buttons {
-                display: none;
-            }
-
-            .navbar .logo {
-                width: 100%;
-                text-align: center;
-                margin-bottom: 10px;
-            }
-        }
-
-        /* Responsive Hero Section */
-        @media (max-width: 768px) {
-            .hero-section h1 {
-                font-size: 2rem;
-            }
-
-            .hero-section div {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .grid-cols-3 {
-                grid-template-columns: 1fr;
-            }
-
-            .w-48 {
-                width: 100%;
-            }
-
-            .w-80 {
-                width: 100%;
-            }
-        }
-
-        /* Button and Input Scaling */
-        @media (max-width: 768px) {
-            input,
-            button {
-                width: 100%;
-                max-width: 100%;
-                margin-bottom: 10px;
-            }
-        }
-        .propworth-section {
-            background-color: #003b4d;
-            border-radius: 15px;
-            padding: 20px;
-            color: white;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1600px;
-            margin: 20px auto;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .propworth-info {
-            max-width: 60%;
-        }
-
-        .propworth-info h2 {
-            margin: 0;
-            font-size: 24px;
-            color: #e30045;
-        }
-
-        .propworth-info p {
-            font-size: 14px;
-            margin: 10px 0;
-        }
-
-        .propworth-input {
-            display: flex;
-            align-items: center;
-            background-color: #004e62;
-            padding: 5px;
-            border-radius: 30px;
-        }
-
-        .propworth-input input {
-            border: none;
-            padding: 10px;
-            border-radius: 30px 0 0 30px;
-            outline: none;
-            color: white;
-            background-color: #004e62;
-            width: 250px;
-        }
-
-        .propworth-input input::placeholder {
-            color: #cce4ed;
-        }
-
-        .propworth-input button {
-            background-color: #e30045;
-            color: white;
-            border: none;
-            border-radius: 0 30px 30px 0;
-            padding: 10px 20px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-
-        .propworth-input button:hover {
-            background-color: #ff476b;
-        }
-
-        .estimate-time {
-            font-size: 12px;
-            color: #cce4ed;
-            margin-top: 5px;
-            text-align: right;
-        }
-
-    </style>
+    <title>PropDekho</title>
 </head>
 
-<body class="bg-gray-100 font-sans">
-
-    <!-- Navbar -->
-    <header class="navbar">
-        <div class="logo">PROP DEKHO</div>
-        <div class="hamburger">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-        <div class="menu">
-            <a href="#">Buy</a>
-            <a href="#">Rent</a>
-            <a href="#">Sell</a>
-            <a href="#">Home Loans</a>
-            <a href="#">Home Interiors</a>
-            <a href="#">MB Advice</a>
-            <a href="#">Help</a>
-        </div>
-        <div class="buttons">
-            <a href="#">MB Prime</a>
-            <a href="#">Login</a>
-            <a href="#" style="background-color: orange;">Post Property</a>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="relative bg-gray-100 py-16 text-center hero-section">
-        <img src="building.jpg" alt="Hero Background" class="absolute inset-0 w-full h-full object-cover opacity-20">
-        <div class="relative container mx-auto">
-            <h1 class="text-5xl font-bold text-gray-800">Find a home you'll love</h1>
-            <div class="mt-8 flex justify-center space-x-4 flex-wrap">
-                <button class="bg-white border border-blue-500 text-blue-500 px-6 py-3 rounded-full">Buy</button>
-                <button class="bg-white border border-blue-500 text-blue-500 px-6 py-3 rounded-full">Rent</button>
-                <button class="bg-white border border-blue-500 text-blue-500 px-6 py-3 rounded-full">New</button>
-                <button class="bg-white border border-blue-500 text-blue-500 px-6 py-3 rounded-full">PG</button>
-                <button class="bg-white border border-blue-500 text-blue-500 px-6 py-3 rounded-full">Commercial</button>
+<body class="h-[100vh]">
+    <nav class="w-full z-50 top-0 bg-blue-500 transition-all duration-300 ease-in-out lg:static lg:relative">
+        <div class="py-2 px-4 flex items-center text-white text-xl font-medium justify-between">
+            <!-- Logo and Location -->
+            <div class="flex items-center gap-4">
+                <img src="logo.png" alt="logo" class="h-10 w-auto object-contain"> <!-- Adjusted logo size -->
+                <a href="#" class="hover:text-gray-300 transition-all duration-300">New Delhi</a>
             </div>
-            <div class="mt-8 flex justify-center space-x-4 flex-wrap">
-                <input type="text" placeholder="New Delhi" class="p-3 border rounded-full w-48">
-                <input type="text" placeholder="Flat | Budget" class="p-3 border rounded-full w-48">
-                <button class="bg-blue-500 text-white px-8 py-3 rounded-full hover:bg-blue-600 hover:shadow-lg transition-all">Search</button>
+            <!-- Desktop Navigation -->
+            <div class="hidden lg:flex items-center gap-16">
+                <a href="#" class="hover:text-gray-300 transition-all duration-300">MB Prime</a>
+                <a href="#" class="hover:text-gray-300 transition-all duration-300">Login</a>
+                <button class="rounded-3xl bg-[#D9D9D9] text-black px-12 py-1 transition-transform transform hover:scale-105 hover:bg-blue-600 hover:text-white">Post Property</button>
+            </div>
+            <!-- Hamburger Icon for Mobile -->
+            <div class="lg:hidden">
+                <button id="menu-toggle" class="text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
             </div>
         </div>
-    </section>
 
-    <!-- Popular Owner Property -->
-    <section class="py-16 bg-gray-100">
-        <h2 class="text-3xl font-semibold text-center text-gray-800">Popular Owner Property</h2>
-        <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 container mx-auto">
-            <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-                <img src="sofa.png" alt="Property 1" class="w-full h-48 object-cover">
-                <div class="p-4">
-                    <p class="text-gray-700">Property 1 Description</p>
-                </div>
+        <!-- Desktop Secondary Navigation -->
+        <div class="hidden lg:flex items-center justify-around text-blue-500 text-xl bg-[#D6D0D0] p-2 transition-all duration-300">
+            <div class="flex items-center gap-16">
+                <p class="hover:text-gray-600 transition-all duration-300 cursor-pointer">Buy</p>
+                <p class="hover:text-gray-600 transition-all duration-300 cursor-pointer">Rent</p>
+                <p class="hover:text-gray-600 transition-all duration-300 cursor-pointer">Sell</p>
+                <p class="hover:text-gray-600 transition-all duration-300 cursor-pointer">Home Loans</p>
             </div>
-            <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-                <img src="room.jpeg" alt="Property 2" class="w-full h-48 object-cover">
-                <div class="p-4">
-                    <p class="text-gray-700">Property 2 Description</p>
-                </div>
-            </div>
-            <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-                <img src="coin.png" alt="Property 3" class="w-full h-48 object-cover">
-                <div class="p-4">
-                    <p class="text-gray-700">Property 3 Description</p>
-                </div>
+            <div class="flex items-center gap-16">
+                <p class="hover:text-gray-600 transition-all duration-300 cursor-pointer">Home Interiors</p>
+                <p class="hover:text-gray-600 transition-all duration-300 cursor-pointer">MB Advice</p>
+                <p class="hover:text-gray-600 transition-all duration-300 cursor-pointer">Help</p>
             </div>
         </div>
-    </section>
-
-    <div class="propworth-section">
-      <div class="propworth-info">
-          <h2>PropWorth</h2>
-          <p>Check Estimated Transaction Price of any Property</p>
-          <ul>
-              <li>98% accuracy backed by AI-powered precision</li>
-              <li>Insights from 1 Crore+ listings posted annually</li>
-          </ul>
-      </div>
-      <div>
-          <div class="propworth-input">
-              <input type="text" placeholder="Enter Project/Locality">
-              <button>Get Estimate</button>
-          </div>
-          <div class="estimate-time">Most accurate estimate in just 30 seconds</div>
-      </div>
-  </div>
-
-
-
-    <!-- Trending in New Delhi -->
-    <section class="py-16 bg-white">
-        <h2 class="text-3xl font-semibold text-center text-gray-800">Trending in New Delhi</h2>
-        <div class="mt-8 container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="text-center md:text-left">
-                <h3 class="text-xl font-semibold text-gray-800">Sell or Rent your property faster</h3>
-                <p class="mt-4 text-gray-600">Register to post your property for free on PropDekho.</p>
-                <button class="mt-6 bg-blue-500 text-white px-6 py-3 rounded-full">Post Your Property for Free</button>
-            </div>
-            <img src="building.jpg" alt="Promotion" class="w-full h-auto object-cover rounded-lg">
-        </div>
-    </section>
-
-    <!-- Fresh Properties in New Delhi -->
-    <section class="py-16 bg-gray-100">
-        <h2 class="text-3xl font-semibold text-center text-gray-800">Fresh Properties in New Delhi</h2>
-        <div class="mt-12 grid grid-cols-1 md:grid-cols-4 gap-6 container mx-auto">
-            <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-                <img src="sofa.png" alt="Property 4" class="w-full h-48 object-cover">
-                <div class="p-4">
-                    <p class="text-gray-700">Property 4 Description</p>
-                </div>
-            </div>
-            <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-                <img src="coin.png" alt="Property 5" class="w-full h-48 object-cover">
-                <div class="p-4">
-                    <p class="text-gray-700">Property 5 Description</p>
-                </div>
-            </div>
-            <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-                <img src="building.jpg" alt="Property 6" class="w-full h-48 object-cover">
-                <div class="p-4">
-                    <p class="text-gray-700">Property 6 Description</p>
-                </div>
-            </div>
-            <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-                <img src="couple.png" alt="Property 7" class="w-full h-48 object-cover">
-                <div class="p-4">
-                    <p class="text-gray-700">Property 7 Description</p>
-                </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="fixed top-0 left-0 w-3/4 h-full bg-white p-4 z-50 transform -translate-x-full transition-transform duration-300 ease-in-out">
+            <div class="flex flex-col items-start">
+                <a href="#" class="py-2 hover:text-blue-500 transition-colors duration-300">MB Prime</a>
+                <a href="#" class="py-2 hover:text-blue-500 transition-colors duration-300">Login</a>
+                <button class="rounded-3xl bg-[#D9D9D9] text-black px-12 py-1 mb-2 transition-transform transform hover:scale-105 hover:bg-blue-500 hover:text-white">Post Property</button>
+                <a href="#" class="py-2 hover:text-blue-500 transition-colors duration-300">Buy</a>
+                <a href="#" class="py-2 hover:text-blue-500 transition-colors duration-300">Rent</a>
+                <a href="#" class="py-2 hover:text-blue-500 transition-colors duration-300">Sell</a>
+                <a href="#" class="py-2 hover:text-blue-500 transition-colors duration-300">Home Loans</a>
+                <a href="#" class="py-2 hover:text-blue-500 transition-colors duration-300">Home Interiors</a>
+                <a href="#" class="py-2 hover:text-blue-500 transition-colors duration-300">MB Advice</a>
+                <a href="#" class="py-2 hover:text-blue-500 transition-colors duration-300">Help</a>
             </div>
         </div>
-    </section>
+    </nav>
 
-    <!-- Testimonials Section -->
-    <section class="py-16 bg-white">
-        <div class="container mx-auto text-center">
-            <h2 class="text-3xl font-semibold text-gray-800">View all testimonials</h2>
-            <div class="mt-4 text-gray-600">Articles and guides for property owners</div>
-            <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Testimonial 1 -->
-                <div class="flex bg-white shadow-lg rounded-lg overflow-hidden">
-                    <img src="t1.jpg" alt="Testimonial Image 1" class="w-1/3 h-32 object-cover">
-                    <div class="p-4">
-                        <p class="text-gray-700 italic">"Great service! Found my perfect home in no time."</p>
-                        <p class="mt-4 text-gray-800 font-semibold">- Rohan, New Delhi</p>
-                    </div>
-                </div>
-                <!-- Testimonial 2 -->
-                <div class="flex bg-white shadow-lg rounded-lg overflow-hidden">
-                    <img src="t2.jpeg" alt="Testimonial Image 2" class="w-1/3 h-32 object-cover">
-                    <div class="p-4">
-                        <p class="text-gray-700 italic">"PropDekho made selling my property so easy and quick!"</p>
-                        <p class="mt-4 text-gray-800 font-semibold">- Aditi, Gurugram</p>
-                    </div>
-                </div>
-                <!-- Testimonial 3 -->
-                <div class="flex bg-white shadow-lg rounded-lg overflow-hidden">
-                    <img src="t3.jpeg" alt="Testimonial Image 3" class="w-1/3 h-32 object-cover">
-                    <div class="p-4">
-                        <p class="text-gray-700 italic">"Amazing platform with excellent customer support."</p>
-                        <p class="mt-4 text-gray-800 font-semibold">- Suresh, Noida</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Download App Section -->
-    <section class="py-16 bg-[#f6f1ef]">
-        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between bg-white shadow-lg rounded-lg p-8">
-            <div class="md:w-1/2 text-left">
-                <h2 class="text-3xl font-semibold text-gray-900">Download PropDekho Mobile App</h2>
-                <p class="mt-4 text-gray-600">Get to know about newly posted properties as soon as they are posted.</p>
-                <p class="mt-2 text-gray-600">Manage your properties with ease and get instant alerts about responses.</p>
-                <div class="mt-6 flex space-x-4">
-                    <a href="#"><i class="bi bi-google-play"></i> Get it on Google Play</a>
-                    <a href="#"><i class="bi bi-apple"></i> Download on App Store</a>
-                </div>
-            </div>
-            <div class="md:w-1/2 mt-6 md:mt-0 flex justify-center">
-                <img src="app-mockup.png" alt="Mobile App" class="w-64 h-auto">
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="container mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div>
-                <h3 class="text-xl font-semibold mb-4">99acres</h3>
-                <ul class="space-y-2">
-                    <li><a href="#" class="hover:underline">Mobile Apps</a></li>
-                    <li><a href="#" class="hover:underline">Our Services</a></li>
-                    <li><a href="#" class="hover:underline">Price Trends</a></li>
-                    <li><a href="#" class="hover:underline">Post Your Property</a></li>
-                    <li><a href="#" class="hover:underline">Real Estate Investments</a></li>
-                </ul>
-            </div>
-            <div>
-                <h3 class="text-xl font-semibold mb-4">Company</h3>
-                <ul class="space-y-2">
-                    <li><a href="#" class="hover:underline">About us</a></li>
-                    <li><a href="#" class="hover:underline">Contact us</a></li>
-                    <li><a href="#" class="hover:underline">Careers with us</a></li>
-                    <li><a href="#" class="hover:underline">Terms & Conditions</a></li>
-                    <li><a href="#" class="hover:underline">Request Info</a></li>
-                </ul>
-            </div>
-            <div>
-                <h3 class="text-xl font-semibold mb-4">Our Partners</h3>
-                <ul class="space-y-2">
-                    <li><a href="#" class="hover:underline">Naukri.com</a></li>
-                    <li><a href="#" class="hover:underline">Jeevansathi.com</a></li>
-                    <li><a href="#" class="hover:underline">PolicyBazaar.com</a></li>
-                    <li><a href="#" class="hover:underline">Shiksha.com</a></li>
-                    <li><a href="#" class="hover:underline">PaisaBazaar.com</a></li>
-                </ul>
-            </div>
-            <div>
-                <h3 class="text-xl font-semibold mb-4">Contact Us</h3>
-                <ul class="space-y-2">
-                    <li><a href="#" class="hover:underline">Toll Free: 1800 41 99099</a></li>
-                    <li><a href="#" class="hover:underline">Email: feedback@99acres.com</a></li>
-                </ul>
-                <div class="mt-6">
-                    <h3 class="text-xl font-semibold mb-4">Download the App</h3>
-                    <div class="flex space-x-4">
-                        <a href="#"><i class="bi bi-google-play"></i> Get it on Google Play</a>
-                        <a href="#"><i class="bi bi-apple"></i> Download on App Store</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container mx-auto mt-8 text-center text-sm text-gray-500">
-            © 2024 PropDekho. All rights reserved.
-        </div>
-    </footer>
-
-    <!-- Add JS for the mobile menu toggle -->
     <script>
-        const hamburger = document.querySelector('.hamburger');
-        const mobileMenu = document.querySelector('.menu');
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
 
-        hamburger.addEventListener('click', function () {
-            mobileMenu.classList.toggle('active');
+        // Toggle mobile menu animation
+        menuToggle.addEventListener('click', () => {
+            if (mobileMenu.classList.contains('-translate-x-full')) {
+                mobileMenu.classList.remove('-translate-x-full');
+                mobileMenu.classList.add('translate-x-0');
+            } else {
+                mobileMenu.classList.add('-translate-x-full');
+                mobileMenu.classList.remove('translate-x-0');
+            }
+        });
+
+        // Change navbar background color on scroll for mobile view
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-blue-700', 'shadow-lg');
+            } else {
+                nav.classList.remove('bg-blue-700', 'shadow-lg');
+            }
         });
     </script>
+</body>
+
+
+<main class="">
+    <!-- Static Hero Image -->
+    <div class="relative w-full h-60 md:h-96 overflow-hidden rounded-lg">
+        <img src="hero.jpeg" alt="Hero Image" class="absolute block w-full h-full object-cover">
+    </div>
+</main>
+
+<div class="flex flex-col py-16 px-4 md:px-8 lg:px-16">
+    <h3 class="text-center text-xl md:text-2xl font-inknut font-semibold text-[#168CE5]">Find a home you'll love</h3>
+
+    <!-- Property Type Options -->
+    <div class="flex flex-wrap items-center justify-center gap-4 md:gap-8 p-4 text-base md:text-2xl">
+        <p class="py-2 px-4 bg-gray-100 rounded-full hover:bg-gray-200 transition-all">Buy</p>
+        <p class="py-2 px-4 bg-gray-100 rounded-full hover:bg-gray-200 transition-all">Rent</p>
+        <p class="py-2 px-4 bg-gray-100 rounded-full hover:bg-gray-200 transition-all">New</p>
+        <p class="py-2 px-4 bg-gray-100 rounded-full hover:bg-gray-200 transition-all">PG</p>
+        <p class="py-2 px-4 bg-gray-100 rounded-full hover:bg-gray-200 transition-all">Plots</p>
+        <p class="py-2 px-4 bg-gray-100 rounded-full hover:bg-gray-200 transition-all">Commercial</p>
+    </div>
+
+    <!-- Search Section -->
+    <div class="flex flex-col sm:flex-row items-center justify-center text-sm sm:text-lg">
+        <div class="rounded-full py-2 px-4 flex flex-col sm:flex-row items-center justify-center gap-2 lg:gap-4 bg-[#D9D9D9] w-full sm:w-auto">
+            <p class="bg-white rounded-full py-1 px-4">New Delhi</p>
+            <div class="border-l border-black h-5 hidden sm:block"></div>
+            <p class="mt-2 sm:mt-0">Flat+1</p>
+            <div class="border-l border-black h-5 hidden sm:block"></div>
+            <p class="mt-2 sm:mt-0">Budget</p>
+            <div class="border-l border-black h-5 hidden sm:block"></div>
+            <p class="bg-[#1EC8D4] rounded-full py-1 px-8 text-white cursor-pointer hover:bg-[#12a2b8]">Search</p>
+        </div>
+    </div>
+</div>
+
+<!-- Popular Owner Property Section -->
+<div class="mt-4 ml-6 mb-8 px-4">
+    <h2 class="font-bold text-xl md:text-2xl mb-4">Popular Owner Property</h2>
+    <hr class="border-4 border-[#1EC8D4] w-24 sm:w-32 mb-8">
+
+    <!-- Responsive Image Carousel -->
+    <div class="flex object-contain h-48 gap-6 overflow-x-auto p-4">
+        <img src="sofa.png" alt="Sofa" class="h-full object-contain flex-shrink-0 transition-transform transform hover:scale-105 hover:shadow-lg">
+        <img src="room.png" alt="Room" class="h-full object-contain flex-shrink-0 transition-transform transform hover:scale-105 hover:shadow-lg">
+        <img src="coins.png" alt="Coins" class="h-full object-contain flex-shrink-0 transition-transform transform hover:scale-105 hover:shadow-lg">
+        <img src="couple.png" alt="Couple" class="h-full object-contain flex-shrink-0 transition-transform transform hover:scale-105 hover:shadow-lg">
+        <img src="building.png" alt="Building" class="h-full object-contain flex-shrink-0 transition-transform transform hover:scale-105 hover:shadow-lg">
+        <img src="OIP.jpg" alt="Image" class="h-full object-contain flex-shrink-0 transition-transform transform hover:scale-105 hover:shadow-lg">
+        <img src="sofa.png" alt="Sofa" class="h-full object-contain flex-shrink-0 transition-transform transform hover:scale-105 hover:shadow-lg">
+        <img src="room.png" alt="Room" class="h-full object-contain flex-shrink-0 transition-transform transform hover:scale-105 hover:shadow-lg">
+        <img src="coins.png" alt="Coins" class="h-full object-contain flex-shrink-0 transition-transform transform hover:scale-105 hover:shadow-lg">
+        <img src="couple.png" alt="Couple" class="h-full object-contain flex-shrink-0 transition-transform transform hover:scale-105 hover:shadow-lg">
+        <img src="building.png" alt="Building" class="h-full object-contain flex-shrink-0 transition-transform transform hover:scale-105 hover:shadow-lg">
+        <img src="OIP.jpg" alt="Image" class="h-full object-contain flex-shrink-0 transition-transform transform hover:scale-105 hover:shadow-lg">
+    </div>
+</div>
+
+<!-- PropWorth Section -->
+<div class="bg-gradient-to-r from-gray-800 to-blue-900 rounded-lg p-6 w-full max-w-4xl mx-auto mt-8 text-white shadow-lg">
+    <div class="flex flex-col lg:flex-row justify-between items-center gap-4">
+        <!-- Left Section: Description -->
+        <div class="lg:w-1/2">
+            <div class="flex items-center gap-2 mb-4">
+                <!-- Logo Placeholder -->
+                <img src="icon.png" alt="PropWorth Logo" class="h-6 w-6"> <!-- Replace with your icon -->
+                <h3 class="text-xl font-semibold">PropWorth</h3>
+            </div>
+            <p class="text-lg">Check Estimated Transaction Price of any Property</p>
+            <ul class="mt-4 text-sm space-y-1">
+                <li>✔ 99% accuracy backed by AI-powered precision</li>
+                <li>✔ Insight from 1 Crore+ listings posted annually</li>
+            </ul>
+        </div>
+
+        <!-- Right Section: Input and Button -->
+        <div class="lg:w-1/2 flex flex-col lg:flex-row gap-4 items-center justify-center lg:justify-end">
+            <input type="text" placeholder="Enter Project/Locality" 
+                   class="text-gray-900 text-lg p-3 rounded-full w-full lg:w-64 focus:outline-none focus:ring-2 focus:ring-blue-300">
+            <button class="bg-red-600 text-white rounded-full px-6 py-3 hover:bg-red-700 transition-all">Get Estimate</button>
+        </div>
+    </div>
+
+    <!-- Additional Info -->
+    <p class="text-xs mt-4 text-center lg:text-right">Most accurate estimate in just 2-3 seconds</p>
+</div>
+
+
+        
+
+<div class="mt-4 ml-4 md:ml-6 pb-8 px-4">
+    <h2 class="font-bold text-xl md:text-2xl mb-4">Trending in New Delhi</h2>
+    <hr class="border-4 border-[#1EC8D4] w-24 sm:w-32 mb-4">
+    
+    <h3 class="text-[#168CE5] font-bold text-lg text-center mb-4">ARE YOU AN OWNER?</h3>
+    <h4 class="text-2xl md:text-4xl text-center font-bold mb-8">
+        Sell or Rent your property faster <br class="hidden md:block"> with 99acres
+    </h4>
+
+    <!-- Responsive Content Section -->
+    <div class="flex flex-col md:flex-row justify-center gap-8 md:gap-12">
+        <!-- Image Section -->
+        <div class="flex justify-center md:justify-start">
+            <img src="couple.png" alt="Owner Selling Property" class="h-[40vh] md:h-[60vh] object-contain">
+        </div>
+
+        <!-- Text Section -->
+        <div class="text-center md:text-left">
+            <p class="font-bold text-sm text-[#0000008F] mb-4">POST YOUR PROPERTY</p>
+            <p class="text-2xl md:text-4xl font-bold mb-4">Register to post your <br class="hidden md:block"> property for</p>
+            <p class="text-lg md:text-2xl mb-4">Sell or rent your residential/<br class="hidden md:block"> commercial property</p>
+            <button class="bg-[#168CE5] px-4 py-2 mb-4 text-white font-bold text-lg md:text-xl rounded-lg hover:bg-[#136dbd] transition-all">
+                Post your property for free
+            </button>
+        </div>
+    </div>
+
+    <!-- Responsive Information Section -->
+    <div class="w-full flex justify-center md:justify-end mt-8">
+        <div class="z-10 bg-white rounded-lg flex flex-col lg:flex-row justify-end lg:-translate-y-16 w-full lg:w-[72rem] gap-6 lg:gap-12 py-4 px-4 mx-2 shadow-lg">
+            <!-- Text Section -->
+            <div class="text-center lg:text-left mb-8 lg:mb-0">
+                <p class="font-bold text-lg md:text-xl lg:text-4xl mb-4 lg:mb-6 mt-4 lg:mt-6 text-black">
+                    Articles and guides for <br> property owners
+                </p>
+                <p class="text-gray-700 text-sm md:text-base">Read from Beginners check-list to Pro Tips</p>
+            </div>
+
+            <!-- 2x2 Image Grid Section -->
+            <div class="grid grid-cols-2 gap-4 w-full lg:w-[28rem]">
+                <div>
+                    <img src="room.png" alt="Room" class="w-full h-36 md:h-44 object-cover rounded-md transition-transform transform hover:scale-105 hover:shadow-lg hover:brightness-110">
+                </div>
+                <div>
+                    <img src="building.png" alt="Building" class="w-full h-36 md:h-44 object-cover rounded-md transition-transform transform hover:scale-105 hover:shadow-lg hover:brightness-110">
+                </div>
+                <div>
+                    <img src="sofa.png" alt="Sofa" class="w-full h-36 md:h-44 object-cover rounded-md transition-transform transform hover:scale-105 hover:shadow-lg hover:brightness-110">
+                </div>
+                <div>
+                    <img src="coins.png" alt="Interior" class="w-full h-36 md:h-44 object-cover rounded-md transition-transform transform hover:scale-105 hover:shadow-lg hover:brightness-110">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+            <div class="mt-4 mb-8 ml-6">
+                <h2 class="font-bold text-2xl mb-4">Fresh Properties in New Delhi</h2>
+                <hr class="border-4 border-[#1EC8D4] w-32 mb-8">
+                
+                <!-- Flex container with increased gap and hover effects -->
+                <div class="flex object-contain h-48 gap-8 overflow-x-auto p-4">
+                    <img src="sofa.png" alt="" class="h-full object-contain flex-shrink-0 transition-transform transform hover:scale-105 hover:shadow-lg">
+                    <img src="couple.png" alt="" class="h-full object-contain flex-shrink-0 transition-transform transform hover:scale-105 hover:shadow-lg">
+                    <img src="bulding 2.png" alt="" class="h-full object-contain flex-shrink-0 transition-transform transform hover:scale-105 hover:shadow-lg">
+                    <img src="room.png" alt="" class="h-full object-contain flex-shrink-0 transition-transform transform hover:scale-105 hover:shadow-lg">
+                    <img src="OIP.jpg" alt="" class="h-full object-contain flex-shrink-0 transition-transform transform hover:scale-105 hover:shadow-lg">
+                    <img src="./images/d_hp_buy_xl 1.png" alt="" class="h-full object-contain flex-shrink-0 transition-transform transform hover:scale-105 hover:shadow-lg">
+                    <img src="sofa.png" alt="" class="h-full object-contain flex-shrink-0 transition-transform transform hover:scale-105 hover:shadow-lg">
+                    <img src="couple.png" alt="" class="h-full object-contain flex-shrink-0 transition-transform transform hover:scale-105 hover:shadow-lg">
+                    <img src="bulding 2.png" alt="" class="h-full object-contain flex-shrink-0 transition-transform transform hover:scale-105 hover:shadow-lg">
+                    <img src="room.png" alt="" class="h-full object-contain flex-shrink-0 transition-transform transform hover:scale-105 hover:shadow-lg">
+                    <img src="OIP.jpg" alt="" class="h-full object-contain flex-shrink-0 transition-transform transform hover:scale-105 hover:shadow-lg">
+                    <img src="./images/d_hp_buy_xl 1.png" alt="" class="h-full object-contain flex-shrink-0 transition-transform transform hover:scale-105 hover:shadow-lg">
+                </div>
+            </div>
+            
+    </main>
+
+    <!-- Testimonials and App Download Section -->
+    <div class="bg-gray-100 py-12">
+        <!-- View All Testimonials -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+            <div class="flex justify-between items-center">
+                <h2 class="text-2xl font-bold text-black">View all testimonials</h2>
+                <a href="#" class="text-blue-600 text-lg font-semibold hover:underline">
+                    View all testimonials &rarr;
+                </a>
+            </div>
+        </div>
+        
+        <!-- App Download Section -->
+        <div class="max-w-7xl mx-auto bg-white py-8 px-4 sm:px-6 lg:px-8 shadow-md rounded-lg">
+            <div class="flex flex-col lg:flex-row items-center justify-between">
+                <!-- Text Section -->
+                <div class="text-center lg:text-left">
+                    <h3 class="text-xl font-bold text-black">Download 99acres Mobile App</h3>
+                    <p class="text-gray-600 mt-2">and never miss out any update</p>
+                    <ul class="mt-4 space-y-2">
+                        <li class="text-gray-700 flex items-start">
+                            <span class="mr-2 text-blue-500">✔️</span> Get to know about newly posted properties as soon as they are posted
+                        </li>
+                        <li class="text-gray-700 flex items-start">
+                            <span class="mr-2 text-blue-500">✔️</span> Manage your properties with ease and get instant alerts about responses
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- App Image and Download Links -->
+                <div class="mt-6 lg:mt-0 lg:ml-8">
+                    <img src="app-mockup.png" alt="App Mockup" class="w-60 mx-auto lg:w-48">
+                    <div class="flex justify-center lg:justify-start mt-4 space-x-4">
+                        <a href="#" class="inline-flex items-center space-x-2 bg-gray-200 py-2 px-4 rounded-lg hover:bg-gray-300">
+                            <i class="bi bi-google-play"></i>
+                            <span>Google Play</span>
+                        </a>
+                        <a href="#" class="inline-flex items-center space-x-2 bg-gray-200 py-2 px-4 rounded-lg hover:bg-gray-300">
+                            <i class="bi bi-apple"></i>
+                            <span>App Store</span>
+                        </a>
+                    </div>
+                    <div class="mt-4 text-center text-gray-500">
+                        <span class="text-lg font-semibold">5M+ Downloads</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+<footer class="bg-gray-900 text-white py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Column 1: 99acres -->
+        <div>
+            <h3 class="font-semibold text-lg">99acres</h3>
+            <ul class="mt-4 space-y-2">
+                <li><a href="#" class="hover:underline">Mobile Apps</a></li>
+                <li><a href="#" class="hover:underline">Our Services</a></li>
+                <li><a href="#" class="hover:underline">Price Trends</a></li>
+                <li><a href="#" class="hover:underline">Post your Property</a></li>
+                <li><a href="#" class="hover:underline">Real Estate Investments</a></li>
+                <li><a href="#" class="hover:underline">Builders in India</a></li>
+                <li><a href="#" class="hover:underline">Area Converter</a></li>
+                <li><a href="#" class="hover:underline">Articles</a></li>
+                <li><a href="#" class="hover:underline">Rent Receipt</a></li>
+                <li><a href="#" class="hover:underline">Customer Service</a></li>
+                <li><a href="#" class="hover:underline">Sitemap</a></li>
+            </ul>
+        </div>
+
+        <!-- Column 2: Company -->
+        <div>
+            <h3 class="font-semibold text-lg">Company</h3>
+            <ul class="mt-4 space-y-2">
+                <li><a href="#" class="hover:underline">About Us</a></li>
+                <li><a href="#" class="hover:underline">Contact Us</a></li>
+                <li><a href="#" class="hover:underline">Careers with Us</a></li>
+                <li><a href="#" class="hover:underline">Terms & Conditions</a></li>
+                <li><a href="#" class="hover:underline">Request Info</a></li>
+                <li><a href="#" class="hover:underline">Feedback</a></li>
+                <li><a href="#" class="hover:underline">Report a problem</a></li>
+                <li><a href="#" class="hover:underline">Testimonials</a></li>
+                <li><a href="#" class="hover:underline">Privacy Policy</a></li>
+                <li><a href="#" class="hover:underline">Summons/Notices</a></li>
+                <li><a href="#" class="hover:underline">Grievances</a></li>
+                <li><a href="#" class="hover:underline">Safety Guide</a></li>
+            </ul>
+        </div>
+
+        <!-- Column 3: Our Partners -->
+        <div>
+            <h3 class="font-semibold text-lg">Our Partners</h3>
+            <ul class="mt-4 space-y-2">
+                <li><a href="#" class="hover:underline">Naukri.com - Jobs in India</a></li>
+                <li><a href="#" class="hover:underline">NaukriGulf.com - Jobs in middle east</a></li>
+                <li><a href="#" class="hover:underline">Jeevansathi.com - Matrimonials</a></li>
+                <li><a href="#" class="hover:underline">Brijj.com - Professional Networking</a></li>
+                <li><a href="#" class="hover:underline">Shiksha.com - Education Career Info</a></li>
+                <li><a href="#" class="hover:underline">Policybazaar.com - Insurance India</a></li>
+                <li><a href="#" class="hover:underline">PaisaBazaar.com</a></li>
+                <li><a href="#" class="hover:underline">AmbitionBox.com</a></li>
+                <li><a href="#" class="hover:underline">FirstNaukri.com - A jobsite for campus hiring</a></li>
+                <li><a href="#" class="hover:underline">JobHai.com - Find Jobs Near You</a></li>
+                <li><a href="#" class="hover:underline">Techminis.com - Tech news on the go</a></li>
+            </ul>
+        </div>
+
+        <!-- Column 4: Contact Us -->
+        <div>
+            <h3 class="font-semibold text-lg">Contact Us</h3>
+            <p class="mt-4">Toll Free - 1800 41 99099</p>
+            <p>9:30 AM to 6:30 PM (Mon-Sun)</p>
+            <p>Email - feedback@99acres.com</p>
+            <div class="mt-4">
+                <p class="font-semibold">Connect with us:</p>
+                <div class="mt-2 flex space-x-3">
+                    <a href="#" class="hover:text-gray-400"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="hover:text-gray-400"><i class="bi bi-twitter"></i></a>
+                    <a href="#" class="hover:text-gray-400"><i class="bi bi-youtube"></i></a>
+                </div>
+            </div>
+            <div class="mt-4">
+                <div class="flex space-x-4">
+                    <!-- Google Play Button with Icon -->
+                    <a href="#" class="flex items-center bg-gray-200 py-2 px-4 rounded-lg hover:bg-gray-300 transition-colors">
+                        <!-- Google Play Icon -->
+                        <i class="bi bi-google-play mr-2"></i>
+                        <span>Google Play</span>
+                    </a>
+                    <!-- App Store Button with Icon -->
+                    <a href="#" class="flex items-center bg-gray-200 py-2 px-4 rounded-lg hover:bg-gray-300 transition-colors">
+                        <!-- App Store Icon -->
+                        <i class="bi bi-apple mr-2"></i>
+                        <span>App Store</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Footer -->
+    <div class="mt-8 text-center text-gray-400">
+        <p>&copy; All trademarks are the property of their respective owners. All rights reserved - PropDekho (India) Ltd.</p>
+        <p>PropDekho @2024</p>
+    </div>
+</footer>
+
+<!-- Add Bootstrap Icons -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.js"></script>
+
+
 </body>
 
 </html>
