@@ -101,7 +101,7 @@
 </body>
 
 
-<main class="">
+<main class="mb-8">
     <!-- Static Hero Image -->
     <div class="relative w-full h-60 md:h-96 overflow-hidden rounded-lg">
         <img src="hero.jpeg" alt="Hero Image" class="absolute block w-full h-full object-cover">
@@ -109,9 +109,9 @@
 </main>
 
 <!-- Search Bar Section -->
-<div class="bg-white shadow-lg rounded-lg p-4">
+<div class="bg-white shadow-lg rounded-lg p-4 mx-4 sm:mx-8 lg:mx-16">
     <!-- Navigation Links (Buy, Rent, New Launch, etc.) -->
-    <div class="flex justify-center gap-4 text-gray-600 text-sm md:text-lg">
+    <div class="flex flex-wrap justify-center gap-4 text-gray-600 text-sm md:text-lg">
         <a href="#" class="font-bold text-blue-600">Buy</a>
         <a href="#" class="hover:text-blue-600">Rent</a>
         <a href="#" class="hover:text-blue-600 flex items-center">
@@ -124,40 +124,39 @@
     </div>
 
     <!-- Search Bar -->
-    <div class="mt-4 flex flex-col md:flex-row items-center justify-between gap-4 bg-white p-4 rounded-lg shadow-md">
+    <div class="mt-6 flex flex-col md:flex-row items-center justify-between gap-4 bg-white p-4 rounded-lg shadow-md">
         <!-- Dropdown for Residential Types -->
         <div class="relative w-full md:w-1/4">
-            <button class="bg-gray-100 text-sm px-4 py-2 rounded-full w-full flex justify-between items-center">
+            <button class="bg-gray-100 text-sm px-4 py-2 rounded-full w-full flex justify-between items-center focus:outline-none">
                 All Residential <i class="bi bi-chevron-down ml-2"></i>
             </button>
-            <!-- Dropdown items -->
-            <!-- Add your dropdown items here (optional) -->
+            <!-- Dropdown items (optional) -->
         </div>
 
         <!-- Search Input -->
-        <div class="flex items-center bg-gray-100 px-4 py-2 rounded-full w-full md:w-1/2">
+        <div class="flex items-center bg-gray-100 px-4 py-2 rounded-full w-full md:w-1/2 focus-within:ring-2 focus-within:ring-blue-300 transition-all duration-150">
             <i class="bi bi-search text-gray-500"></i>
             <input 
                 type="text" 
                 placeholder='Search "Hyderabad"' 
-                class="w-full bg-transparent outline-none text-gray-700 ml-2 placeholder-gray-500"
+                class="w-full bg-transparent outline-none text-gray-700 ml-2 placeholder-gray-500 focus:outline-none"
             />
         </div>
 
         <!-- Location and Voice Icons -->
-        <div class="flex gap-2">
+        <div class="flex gap-2 mt-4 md:mt-0">
             <!-- Location Icon -->
-            <button class="flex justify-center items-center bg-gray-100 rounded-full p-2 hover:bg-gray-200">
+            <button class="flex justify-center items-center bg-gray-100 rounded-full p-2 hover:bg-gray-200 transition-colors">
                 <i class="bi bi-geo-alt-fill text-blue-500"></i>
             </button>
             <!-- Voice Icon -->
-            <button class="flex justify-center items-center bg-gray-100 rounded-full p-2 hover:bg-gray-200">
+            <button class="flex justify-center items-center bg-gray-100 rounded-full p-2 hover:bg-gray-200 transition-colors">
                 <i class="bi bi-mic text-blue-500"></i>
             </button>
         </div>
 
         <!-- Search Button -->
-        <button class="bg-blue-600 hover:bg-blue-700 text-white rounded-full px-6 py-2 w-full md:w-auto">
+        <button class="bg-blue-600 hover:bg-blue-700 text-white rounded-full px-6 py-2 w-full md:w-auto transition-all">
             Search
         </button>
     </div>
@@ -165,6 +164,7 @@
 
 <!-- Add Bootstrap Icons -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.js"></script>
+
 
 <!-- Popular Owner Property Section -->
 <div class="mt-4 ml-6 mb-8 px-4">
